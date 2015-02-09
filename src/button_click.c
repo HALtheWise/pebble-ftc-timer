@@ -51,7 +51,7 @@ void update_timer(){
 
   //strftime(time_str, 5, "%M:%S", (const struct *tm){.tm_min = AD_time_value/60, .tm_sec = AD_time_value%60});
   //Prepend "0" to seconds if less than 10 seconds remain in minute
-  snprintf(time_str, 5, (AD_time_value%60 < 10) ? "%i:0%i" : "%i:%i", AD_time_value / 60, AD_time_value % 60);
+  snprintf(time_str, 5, "%i:%02i", AD_time_value / 60, AD_time_value % 60);
   text_layer_set_text(time_layer, time_str);
 
   if (STATE_INACTIVE) {
